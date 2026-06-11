@@ -61,7 +61,7 @@ winget install "FFmpeg (Essentials Build)"
 pip install -r requirements.txt
 ```
 
-**5. Add NVIDIA library paths to PATH** (replace `YOUR_USER` with your username)
+**4. Add NVIDIA library paths to PATH** (replace `YOUR_USER` with your username)
 ```powershell
 $cudnnPath = "C:\Users\YOUR_USER\AppData\Local\Programs\Python\Python311\Lib\site-packages\nvidia\cudnn\bin"
 $current = [Environment]::GetEnvironmentVariable("PATH", "User")
@@ -115,9 +115,9 @@ $shortcut.TargetPath = (Get-Command pythonw.exe).Source
 $shortcut.Arguments = "C:\path\to\voice_input.py"
 $shortcut.WorkingDirectory = "C:\path\to\push-to-talk-whisper"
 $shortcut.Save()
-$bytes = [System.IO.File]::ReadAllBytes("$env:USERPROFILE\Desktop\VoicePaste.lnk")
+$bytes = [System.IO.File]::ReadAllBytes("$env:USERPROFILE\Desktop\Push-to-Talk Whisper.lnk")
 $bytes[0x15] = $bytes[0x15] -bor 0x20
-[System.IO.File]::WriteAllBytes("$env:USERPROFILE\Desktop\VoicePaste.lnk", $bytes)
+[System.IO.File]::WriteAllBytes("$env:USERPROFILE\Desktop\Push-to-Talk Whisper.lnk", $bytes)
 ```
 
 ## License
